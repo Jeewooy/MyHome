@@ -48,7 +48,6 @@ function start()
 	updateCpnt:SetActive(true);
 
 	btnStartCpnt.onClick:AddListener(function()
-	    print("Click Start!")
 		animLogoCpnt:Play("Logo")
 		goStartBtn:SetActive(false);
 		studentsPanelAnimCpnt:Play("Names")
