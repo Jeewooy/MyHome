@@ -34,7 +34,7 @@ function start()
 	qclBtnCpnt = qclBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
 	wqBtnCpnt = wqBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
 	zyxBtnCpnt = zyxBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
-	updateCpnt = updateObject:GetComponent(typeof(CS.UnityEngine.UI.Text))
+	updateCpnt = updateObject
 	--print("lua start...")
 	--print("injected object", lightObject)
 	--lightCpnt= lightObject:GetComponent(typeof(CS.UnityEngine.Light))
@@ -45,7 +45,7 @@ function start()
 	--cubeCpnt = cubeObject:GetComponent(typeof(CS.UnityEngine.MeshRenderer))
 	--nextBtnCpnt = nextBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
 
-	updateCpnt:enabled = true;
+	updateCpnt:SetActive(true);
 
 	btnStartCpnt.onClick:AddListener(function()
 	    print("Click Start!")
