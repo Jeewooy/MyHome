@@ -1,0 +1,102 @@
+-- Tencent is pleased to support the open source community by making xLua available.
+-- Copyright (C) 2016 THL A29 Limited, a Tencent company. All rights reserved.
+-- Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+-- http://opensource.org/licenses/MIT
+-- Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+--local speed = 1000
+--local lightCpnt = nil
+--local buttonCpnt = nil
+--local closeBtnCpnt = nil
+--local leftPanelAnimCpnt = nil
+--local sliderCpnt = nil
+--local cubeCpnt = nil
+--local nextBtnCpnt = nil
+local btnStartCpnt = nil
+local animLogoCpnt = nil
+local goStartBtn = nil
+local studentsPanelAnimCpnt = nil
+local qclBtnCpnt = nil
+local wqBtnCpnt = nil
+local zyxBtnCpnt = nil
+local djwBtnCpnt = nil
+local zgfBtnCpnt = nil
+function start()
+	
+	btnStartCpnt = startBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	animLogoCpnt = logoObject:GetComponent(typeof(CS.UnityEngine.Animator))
+	goStartBtn = startBtnObject
+	zgfBtnCpnt = zgfBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	studentsPanelAnimCpnt = studentsPanelObject:GetComponent(typeof(CS.UnityEngine.Animator))
+	djwBtnCpnt = djwBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	qclBtnCpnt = qclBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	wqBtnCpnt = wqBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	zyxBtnCpnt = zyxBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	--print("lua start...")
+	--print("injected object", lightObject)
+	--lightCpnt= lightObject:GetComponent(typeof(CS.UnityEngine.Light))
+	--buttonCpnt = startObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	--closeBtnCpnt = closeBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	--leftPanelAnimCpnt = leftPanelAnimator:GetComponent(typeof(CS.UnityEngine.Animator))
+	--sliderCpnt = sliderObject:GetComponent(typeof(CS.UnityEngine.UI.Slider))
+	--cubeCpnt = cubeObject:GetComponent(typeof(CS.UnityEngine.MeshRenderer))
+	--nextBtnCpnt = nextBtnObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+
+
+	btnStartCpnt.onClick:AddListener(function()
+	    print("Click Start!")
+		animLogoCpnt:Play("Logo")
+		goStartBtn:SetActive(false);
+		studentsPanelAnimCpnt:Play("Names")
+	end)
+
+	qclBtnCpnt.onClick:AddListener(function()
+	    CS.UnityEngine.SceneManagement.SceneManager.LoadScene("Qianchaolong")
+	end)
+
+	zgfBtnCpnt.onClick:AddListener(function()
+	    CS.UnityEngine.SceneManagement.SceneManager.LoadScene("Zhangguifu")
+	end)
+
+	djwBtnCpnt.onClick:AddListener(function()
+	    CS.UnityEngine.SceneManagement.SceneManager.LoadScene("Dingjianwei")
+	end)
+
+	wqBtnCpnt.onClick:AddListener(function()
+	    CS.UnityEngine.SceneManagement.SceneManager.LoadScene("Wuqiong")
+	end)
+
+	zyxBtnCpnt.onClick:AddListener(function()
+	    CS.UnityEngine.SceneManagement.SceneManager.LoadScene("Zhangyuxin")
+	end)
+
+	--buttonCpnt.onClick:AddListener(function()
+	--    local bo = leftPanelAnimCpnt:GetBool("Move")
+	--	leftPanelAnimCpnt:SetBool("Move",not bo)
+	--end)
+
+	--nextBtnCpnt.onClick:AddListener(function()
+	--    CS.UnityEngine.SceneManagement.SceneManager.LoadScene("2")
+	--end)
+
+	--closeBtnCpnt.onClick:AddListener(function()
+	--    local bo = cubeCpnt.enabled
+	--	cubeCpnt.enabled = not bo
+	--	if(cubeCpnt.enabled)then
+	--	   closeBtnCpnt.image.color = CS.UnityEngine.Color.white
+	--	else
+	--	   closeBtnCpnt.image.color = CS.UnityEngine.Color.black
+	--	end
+	--end)
+end
+
+function update()
+	--local r = CS.UnityEngine.Vector3.up * CS.UnityEngine.Time.deltaTime * speed * sliderCpnt.value
+	--self.transform:Rotate(r)
+	--lightCpnt.color = CS.UnityEngine.Color(CS.UnityEngine.Mathf.Sin(CS.UnityEngine.Time.time) / 2 + 0.5, 0, 0, 1)
+end
+
+function ondestroy()
+    --print("lua destroy")
+end
+
