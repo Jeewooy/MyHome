@@ -1,0 +1,42 @@
+local soundToggle=nil
+local audioToggle=nil
+local backButton=nil
+local soundText=nil
+local audioText=nil
+
+function start()
+	soundToggle=soundObject:GetComponent(typeof(CS.UnityEngine.UI.Toggle))
+	audioToggle=audioObject:GetComponent(typeof(CS.UnityEngine.UI.Toggle))
+	backButton=backObject:GetComponent(typeof(CS.UnityEngine.UI.Button))
+	soundText=soundtObject:GetComponent(typeof(CS.UnityEngine.UI.Text))
+	audioText=audiotObject:GetComponent(typeof(CS.UnityEngine.UI.Text))
+	backButton.onClick:AddListener(function()
+				CS.UnityEngine.SceneManagement.SceneManager.LoadScene("Hujianyu") 
+		  end
+	)
+	soundToggle.onValueChanged:AddListener(function()
+				if(soundToggle.isOn)
+				then
+					soundText.color=CS.UnityEngine.Color.yellow
+					print("Sound On")
+				else
+					soundText.color=CS.UnityEngine.Color.white
+					print("Sound Off")
+				end
+		  end
+	)
+	audioToggle.onValueChanged:AddListener(function()
+				if(audioToggle.isOn)
+				then
+					audioText.color=CS.UnityEngine.Color.yellow
+					print("Audio On")
+				else
+					audioText.color=CS.UnityEngine.Color.white
+					print("Audio Off")
+				end
+		  end
+	)
+	
+end
+
+
