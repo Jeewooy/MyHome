@@ -100,6 +100,6 @@ function update()
 end
 
 function ondestroy()
-    --print("Over")
+    print("结束了")
 end
 
