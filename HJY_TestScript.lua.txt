@@ -100,6 +100,6 @@ function update()
 end
 
 function ondestroy()
-    --print("结束")
+    --print("The End")
 end
 
