@@ -99,6 +99,6 @@ function update()
 end
 
 function ondestroy()
-    print("End")
+    print("End结束")
 end
 
